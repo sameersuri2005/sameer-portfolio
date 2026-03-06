@@ -1,236 +1,170 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sameer Soorma | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
+<title>Sameer Soorma Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
 
 body{
-font-family:Inter, sans-serif;
+font-family:Arial;
 background:black;
 color:white;
-overflow-x:hidden;
-}
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:60px 25px;
-}
-
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
+padding:40px;
 }
 
 h1{
-font-size:70px;
-font-weight:800;
-letter-spacing:-2px;
+font-size:60px;
 }
 
-.subtitle{
-font-size:24px;
-color:#ccc;
-margin-top:15px;
-max-width:600px;
-}
-
-.buttons{
-margin-top:40px;
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:14px 24px;
-border-radius:40px;
-border:none;
-cursor:pointer;
-font-weight:600;
-transition:0.3s;
-}
-
-.primary{
-background:white;
-color:black;
-}
-
-.secondary{
-background:#111;
-color:white;
-border:1px solid #333;
-}
-
-.secondary:hover{
-background:#222;
-}
-
-.section{
-margin-top:120px;
-}
-
-.section h2{
-font-size:34px;
-margin-bottom:30px;
-}
-
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.skill{
-padding:18px 24px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-border-radius:15px;
-backdrop-filter:blur(10px);
-transition:0.3s;
-}
-
-.skill:hover{
-transform:translateY(-4px);
-background:rgba(255,255,255,0.1);
+section{
+margin-top:60px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-border-radius:18px;
+background:#111;
 padding:25px;
-margin-bottom:20px;
-backdrop-filter:blur(10px);
+margin-top:20px;
+border-radius:10px;
 }
 
-.card h3{
-margin-bottom:5px;
-}
-
-footer{
-margin-top:100px;
-text-align:center;
-color:#777;
-font-size:14px;
-}
 </style>
 </head>
 
 <body>
 
-<canvas id="bg"></canvas>
-
-<div class="container">
-
-<div class="hero">
 <h1>Sameer Soorma</h1>
-<p class="subtitle">
-Pursuing <b>BBA at DY Patil, Pune</b>. Passionate about marketing, digital campaigns and social media strategy.
-</p>
+<p>BBA Student | Marketing Enthusiast</p>
 
-<div class="buttons">
-<a href="#education"><button class="btn primary">View Education</button></a>
-<a href="https://www.linkedin.com/in/sameer-soorma-a64b2729b" target="_blank">
-<button class="btn secondary">LinkedIn</button>
-</a>
-<a href="mailto:suri.sameer11@gmail.com">
-<button class="btn secondary">Email</button>
-</a>
+<section>
+<h2>Personal Profile</h2>
+<div class="card">
+Results-driven candidate with a strong foundation in business administration,
+finance and strategic management. Skilled in marketing analysis, project
+management and digital campaigns.
 </div>
+</section>
+
+<section>
+<h2>Internship Experience</h2>
+
+<div class="card">
+<b>Marketing Intern – Dialogues Media</b><br>
+March 2025 – Present
+<ul>
+<li>Promoting apps to increase downloads and engagement</li>
+<li>Maintaining brand consistency</li>
+<li>Helped increase audience reach by 20%</li>
+</ul>
 </div>
 
-<div class="section">
-<h2>Top Skills</h2>
+</section>
 
-<div class="skills">
-<div class="skill">Digital Campaigns</div>
-<div class="skill">Adobe Photoshop</div>
-<div class="skill">Social Media</div>
-</div>
-</div>
-
-<div class="section" id="education">
+<section>
 <h2>Education</h2>
 
 <div class="card">
-<h3>DY Patil University</h3>
-<p>Bachelor of Business Administration (BBA)</p>
-<p>Aug 2024 – Mar 2027</p>
+<b>DY Patil University, Pune</b><br>
+Bachelor of Business Administration<br>
+2024 – 2027
 </div>
 
 <div class="card">
-<h3>GCSV Dwarka Sec‑17</h3>
-<p>Junior College, Commerce</p>
-<p>Apr 2022 – Mar 2024</p>
-</div>
+<b>GCSV Dwarka, Delhi</b><br>
+Junior College (Commerce)
 </div>
 
-<footer>
-Sameer Soorma © 2026
-</footer>
+</section>
 
+<section>
+<h2>Skills</h2>
+
+<div class="card">
+Relationship Building<br>
+Leadership<br>
+Market Research<br>
+Communication<br>
+Team Collaboration
 </div>
 
-<script>
-const canvas=document.getElementById("bg")
-const ctx=canvas.getContext("2d")
+</section>
 
-canvas.width=window.innerWidth
-canvas.height=window.innerHeight
+<section>
+<h2>Software / Tools</h2>
 
-let particles=[]
+<div class="card">
+Microsoft Excel<br>
+Microsoft PowerPoint<br>
+Canva<br>
+Gemini / Copilot / ChatGPT / DeepSeek
+</div>
 
-for(let i=0;i<80;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-vx:(Math.random()-0.5)*0.5,
-vy:(Math.random()-0.5)*0.5
-})
-}
+</section>
 
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height)
+<section>
+<h2>Projects</h2>
 
-particles.forEach(p=>{
-p.x+=p.vx
-p.y+=p.vy
+<div class="card">
+<b>Customer Behavior Study</b>
+<p>Surveyed 200+ consumers in the FMCG sector to analyse buying behaviour and brand loyalty.</p>
+</div>
 
-if(p.x<0||p.x>canvas.width)p.vx*=-1
-if(p.y<0||p.y>canvas.height)p.vy*=-1
+<div class="card">
+<b>Retail Store Analysis</b>
+<p>Analysed store traffic and product placement to improve customer engagement.</p>
+</div>
 
-ctx.beginPath()
-ctx.arc(p.x,p.y,2,0,Math.PI*2)
-ctx.fillStyle="white"
-ctx.fill()
-})
+<div class="card">
+<b>Business Blasters 2023</b>
+<p>Developed a smart bottle business prototype with market ready positioning.</p>
+</div>
 
-requestAnimationFrame(animate)
-}
+</section>
 
-animate()
-</script>
+<section>
+<h2>Achievements</h2>
+
+<div class="card">
+Highest score in English Literature (2023)<br>
+Organised multiple esports tournaments
+</div>
+
+</section>
+
+<section>
+<h2>Positions of Responsibility</h2>
+
+<div class="card">
+<b>Class Representative (2023-2024)</b>
+<p>Acted as liaison between students and faculty.</p>
+</div>
+
+<div class="card">
+<b>Guest Management Head – Research Scholars Day</b>
+<p>Managed logistics and guest coordination.</p>
+</div>
+
+</section>
+
+<section>
+<h2>Co-Curricular Activities</h2>
+
+<div class="card">
+State Level Kabaddi Player (2023)<br>
+State Level Cricket Player (2023)
+</div>
+
+</section>
+
+<section>
+<h2>Contact</h2>
+
+<div class="card">
+Email: suri.sameer11@gmail.com<br>
+Location: Pune / Delhi<br>
+LinkedIn: linkedin.com/in/sameer-soorma-a64b2729b
+</div>
+
+</section>
 
 </body>
 </html>
