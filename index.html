@@ -1,170 +1,446 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Sameer Soorma Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sameer Soorma | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-font-family:Arial;
+font-family:Inter;
 background:black;
 color:white;
-padding:40px;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
 h1{
-font-size:60px;
+font-size:70px;
+font-weight:800;
+letter-spacing:-2px;
 }
 
-section{
-margin-top:60px;
+.subtitle{
+font-size:22px;
+color:#ccc;
+margin-top:15px;
+max-width:600px;
+}
+
+.buttons{
+margin-top:40px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 24px;
+border-radius:40px;
+border:none;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.primary{
+background:white;
+color:black;
+}
+
+.secondary{
+background:#111;
+color:white;
+border:1px solid #333;
+}
+
+.secondary:hover{
+background:#222;
+}
+
+.section{
+margin-top:120px;
+}
+
+.section h2{
+font-size:34px;
+margin-bottom:30px;
 }
 
 .card{
-background:#111;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:18px;
 padding:25px;
-margin-top:20px;
-border-radius:10px;
+margin-bottom:20px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,0.08);
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.skill{
+padding:15px 20px;
+background:#111;
+border-radius:12px;
+border:1px solid #333;
+}
+
+footer{
+margin-top:100px;
+text-align:center;
+color:#777;
+font-size:14px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<h1>Sameer Soorma</h1>
-<p>BBA Student | Marketing Enthusiast</p>
+<canvas id="bg"></canvas>
 
-<section>
-<h2>Personal Profile</h2>
-<div class="card">
-Results-driven candidate with a strong foundation in business administration,
-finance and strategic management. Skilled in marketing analysis, project
-management and digital campaigns.
+<div class="container">
+
+<div class="hero">
+
+<h1>Sameer Soorma</h1>
+
+<p class="subtitle">
+Pursuing BBA at DY Patil, Pune. Passionate about marketing, digital campaigns and social media strategy.
+</p>
+
+<div class="buttons">
+
+<a href="#education"><button class="btn primary">Education</button></a>
+
+<a href="https://www.linkedin.com/in/sameer-soorma-a64b2729b" target="_blank">
+<button class="btn secondary">LinkedIn</button>
+</a>
+
+<a href="mailto:suri.sameer11@gmail.com">
+<button class="btn secondary">Email</button>
+</a>
+
 </div>
+
+</div>
+
+<!-- PROFILE -->
+
+<section class="section">
+
+<h2>Personal Profile</h2>
+
+<div class="card">
+
+Results-driven candidate with a strong foundation in business administration, finance and strategic management. Skilled in corporate relations, marketing analytics, and project management. Adept at building strategic partnerships and analyzing market trends.
+
+</div>
+
 </section>
 
-<section>
+<!-- INTERNSHIP -->
+
+<section class="section">
+
 <h2>Internship Experience</h2>
 
 <div class="card">
-<b>Marketing Intern – Dialogues Media</b><br>
-March 2025 – Present
+
+<h3>Marketing Intern — Dialogues Media</h3>
+
+<p>March 2025 – Present</p>
+
 <ul>
-<li>Promoting apps to increase downloads and engagement</li>
-<li>Maintaining brand consistency</li>
-<li>Helped increase audience reach by 20%</li>
+
+<li>Promoting marketing app to increase downloads and engagement</li>
+
+<li>Maintaining brand consistency across campaigns</li>
+
+<li>Contributed to 20% increase in audience reach</li>
+
 </ul>
+
 </div>
 
 </section>
 
-<section>
+<!-- EDUCATION -->
+
+<section class="section" id="education">
+
 <h2>Education</h2>
 
 <div class="card">
-<b>DY Patil University, Pune</b><br>
-Bachelor of Business Administration<br>
+
+<h3>DY Patil University, Pune</h3>
+
+Bachelor of Business Administration  
 2024 – 2027
+
 </div>
 
 <div class="card">
-<b>GCSV Dwarka, Delhi</b><br>
+
+<h3>GCSV Dwarka, Delhi</h3>
+
 Junior College (Commerce)
+
 </div>
 
 </section>
 
-<section>
+<!-- SKILLS -->
+
+<section class="section">
+
 <h2>Skills</h2>
 
-<div class="card">
-Relationship Building<br>
-Leadership<br>
-Market Research<br>
-Communication<br>
-Team Collaboration
+<div class="skills">
+
+<div class="skill">Relationship Building</div>
+<div class="skill">Leadership</div>
+<div class="skill">Market Research</div>
+<div class="skill">Communication</div>
+<div class="skill">Team Collaboration</div>
+
 </div>
 
 </section>
 
-<section>
-<h2>Software / Tools</h2>
+<!-- SOFTWARE -->
+
+<section class="section">
+
+<h2>Software & Tools</h2>
 
 <div class="card">
-Microsoft Excel<br>
-Microsoft PowerPoint<br>
-Canva<br>
+
+Microsoft Excel  
+Microsoft PowerPoint  
+Canva  
 Gemini / Copilot / ChatGPT / DeepSeek
+
 </div>
 
 </section>
 
-<section>
+<!-- PROJECTS -->
+
+<section class="section">
+
 <h2>Projects</h2>
 
 <div class="card">
-<b>Customer Behavior Study</b>
-<p>Surveyed 200+ consumers in the FMCG sector to analyse buying behaviour and brand loyalty.</p>
+
+<h3>Customer Behavior Study</h3>
+
+Surveyed 200+ FMCG consumers to analyze buying behavior and brand loyalty.
+
 </div>
 
 <div class="card">
-<b>Retail Store Analysis</b>
-<p>Analysed store traffic and product placement to improve customer engagement.</p>
+
+<h3>Retail Store Analysis</h3>
+
+Analyzed retail traffic and product placement strategies to improve engagement.
+
 </div>
 
 <div class="card">
-<b>Business Blasters 2023</b>
-<p>Developed a smart bottle business prototype with market ready positioning.</p>
+
+<h3>Business Blasters 2023</h3>
+
+Developed market-ready smart bottle prototype with unique positioning.
+
+</div>
+
+<div class="card">
+
+<h3>Event Management Experience</h3>
+
+Organized college events and national celebrations managing logistics and execution.
+
 </div>
 
 </section>
 
-<section>
+<!-- CERTIFICATIONS -->
+
+<section class="section">
+
+<h2>Certifications</h2>
+
+<div class="card">
+
+Digital Marketing & Social Media Marketing — Udemy  
+Microsoft Excel Certification  
+AI & Prompt Engineering — ChatGPT
+
+</div>
+
+</section>
+
+<!-- ACHIEVEMENTS -->
+
+<section class="section">
+
 <h2>Achievements</h2>
 
 <div class="card">
-Highest score in English Literature (2023)<br>
-Organised multiple esports tournaments
+
+Highest score in English Literature (2023)  
+Organized multiple esports tournaments (200+ participants)
+
 </div>
 
 </section>
 
-<section>
+<!-- RESPONSIBILITY -->
+
+<section class="section">
+
 <h2>Positions of Responsibility</h2>
 
 <div class="card">
-<b>Class Representative (2023-2024)</b>
-<p>Acted as liaison between students and faculty.</p>
+
+<h3>Class Representative (2023–2024)</h3>
+
+Liaison between students and faculty organizing academic discussions.
+
 </div>
 
 <div class="card">
-<b>Guest Management Head – Research Scholars Day</b>
-<p>Managed logistics and guest coordination.</p>
+
+<h3>Guest Management Head — Research Scholars Day</h3>
+
+Managed guest logistics and hospitality coordination.
+
 </div>
 
 </section>
 
-<section>
+<!-- ACTIVITIES -->
+
+<section class="section">
+
 <h2>Co-Curricular Activities</h2>
 
 <div class="card">
-State Level Kabaddi Player (2023)<br>
+
+State Level Kabaddi Player (2023)  
 State Level Cricket Player (2023)
+
 </div>
 
 </section>
 
-<section>
-<h2>Contact</h2>
+<footer>
 
-<div class="card">
-Email: suri.sameer11@gmail.com<br>
-Location: Pune / Delhi<br>
-LinkedIn: linkedin.com/in/sameer-soorma-a64b2729b
+Sameer Soorma © 2026
+
+</footer>
+
 </div>
 
-</section>
+<script>
+
+const canvas=document.getElementById("bg")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+for(let i=0;i<80;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+
+y:Math.random()*canvas.height,
+
+vx:(Math.random()-0.5)*0.5,
+
+vy:(Math.random()-0.5)*0.5
+
+})
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+particles.forEach(p=>{
+
+p.x+=p.vx
+p.y+=p.vy
+
+if(p.x<0||p.x>canvas.width)p.vx*=-1
+if(p.y<0||p.y>canvas.height)p.vy*=-1
+
+ctx.beginPath()
+
+ctx.arc(p.x,p.y,2,0,Math.PI*2)
+
+ctx.fillStyle="white"
+
+ctx.fill()
+
+})
+
+requestAnimationFrame(animate)
+
+}
+
+animate()
+
+</script>
 
 </body>
 </html>
