@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sameer Soorma | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter, sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:60px 25px;
+}
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+h1{
+font-size:70px;
+font-weight:800;
+letter-spacing:-2px;
+}
+
+.subtitle{
+font-size:24px;
+color:#ccc;
+margin-top:15px;
+max-width:600px;
+}
+
+.buttons{
+margin-top:40px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 24px;
+border-radius:40px;
+border:none;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.primary{
+background:white;
+color:black;
+}
+
+.secondary{
+background:#111;
+color:white;
+border:1px solid #333;
+}
+
+.secondary:hover{
+background:#222;
+}
+
+.section{
+margin-top:120px;
+}
+
+.section h2{
+font-size:34px;
+margin-bottom:30px;
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.skill{
+padding:18px 24px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:15px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.skill:hover{
+transform:translateY(-4px);
+background:rgba(255,255,255,0.1);
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:18px;
+padding:25px;
+margin-bottom:20px;
+backdrop-filter:blur(10px);
+}
+
+.card h3{
+margin-bottom:5px;
+}
+
+footer{
+margin-top:100px;
+text-align:center;
+color:#777;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="container">
+
+<div class="hero">
+<h1>Sameer Soorma</h1>
+<p class="subtitle">
+Pursuing <b>BBA at DY Patil, Pune</b>. Passionate about marketing, digital campaigns and social media strategy.
+</p>
+
+<div class="buttons">
+<a href="#education"><button class="btn primary">View Education</button></a>
+<a href="https://www.linkedin.com/in/sameer-soorma-a64b2729b" target="_blank">
+<button class="btn secondary">LinkedIn</button>
+</a>
+<a href="mailto:suri.sameer11@gmail.com">
+<button class="btn secondary">Email</button>
+</a>
+</div>
+</div>
+
+<div class="section">
+<h2>Top Skills</h2>
+
+<div class="skills">
+<div class="skill">Digital Campaigns</div>
+<div class="skill">Adobe Photoshop</div>
+<div class="skill">Social Media</div>
+</div>
+</div>
+
+<div class="section" id="education">
+<h2>Education</h2>
+
+<div class="card">
+<h3>DY Patil University</h3>
+<p>Bachelor of Business Administration (BBA)</p>
+<p>Aug 2024 – Mar 2027</p>
+</div>
+
+<div class="card">
+<h3>GCSV Dwarka Sec‑17</h3>
+<p>Junior College, Commerce</p>
+<p>Apr 2022 – Mar 2024</p>
+</div>
+</div>
+
+<footer>
+Sameer Soorma © 2026
+</footer>
+
+</div>
+
+<script>
+const canvas=document.getElementById("bg")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*0.5,
+vy:(Math.random()-0.5)*0.5
+})
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+particles.forEach(p=>{
+p.x+=p.vx
+p.y+=p.vy
+
+if(p.x<0||p.x>canvas.width)p.vx*=-1
+if(p.y<0||p.y>canvas.height)p.vy*=-1
+
+ctx.beginPath()
+ctx.arc(p.x,p.y,2,0,Math.PI*2)
+ctx.fillStyle="white"
+ctx.fill()
+})
+
+requestAnimationFrame(animate)
+}
+
+animate()
+</script>
+
+</body>
+</html>
